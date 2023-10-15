@@ -19,8 +19,8 @@ typedef struct Heap{
 
 void* heap_top(Heap* pq){
   if(pq->size==0){return NULL;
-    void *aTop = pq->heapArray[0].data
-    return aTop;
+    void *aTop = pq->heapArray[0].data;
+    return aTop
 }
 
 
