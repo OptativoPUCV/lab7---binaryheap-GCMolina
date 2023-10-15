@@ -22,7 +22,7 @@ void* heap_top(Heap* pq){
     void *aTop = pq->heapArray[0].data;
     return aTop;}
 void heap_push(Heap* pq, void* data, int priority){
-
+;
 }
 
 
