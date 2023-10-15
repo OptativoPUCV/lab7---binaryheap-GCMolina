@@ -31,10 +31,10 @@ void heap_push(Heap* pq, void* data, int priority){
   pq->size = pq->size+1;
   heapElem padre,aux;
   while(nuevoD!=0){
-    padre=pq->heapArray[(nuevoD-1)/2];
+    padre=pq->heapArray[(nuevoD+1)/2];
     if(padre.priority<=pq->heapArray[nuevoD].priority)break;
     aux=padre;
-    pq->heapArray[(nuevoD-1)]=pq->heapArray[nuevoD];
+    pq->heapArray[(nuevoD-1)/2]=pq->heapArray[nuevoD];
     pq->heapArray[nuevoD]=aux;
     nuevoD = (nuevoD-1)/2;
     
