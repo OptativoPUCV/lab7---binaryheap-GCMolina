@@ -8,3 +8,14 @@ Sun 15 Oct 2023 04:56:48 PM UTC:
  tests:  0|4
 total_score: 0/70
 4f79096
+Sun 15 Oct 2023 04:57:03 PM UTC: 
+ heap.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+In file included from test.c:4:
+heap.c: In function ‘createHeap’:
+heap.c:39:53: error: expected ‘)’ before ‘heap’
+   39 |   heap->heapArray=(heapElem*)malloc(sizeof(heapElem)heap->capac);
+      |                                    ~                ^~~~
+      |                                                     )
+Compilation failed
+ecf9b17
