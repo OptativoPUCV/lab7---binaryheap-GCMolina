@@ -30,3 +30,9 @@ heap.c:38:9: error: ‘Heap’ {aka ‘struct Heap’} has no member named ‘iz
       |         size
 Compilation failed
 d302d3b
+Sun 15 Oct 2023 04:57:17 PM UTC: 
+ heap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  1|3
+total_score: 10/70
+41e0bd7
