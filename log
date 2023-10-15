@@ -19,3 +19,14 @@ heap.c:39:53: error: expected ‘)’ before ‘heap’
       |                                                     )
 Compilation failed
 ecf9b17
+Sun 15 Oct 2023 04:57:13 PM UTC: 
+ heap.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+In file included from test.c:4:
+heap.c: In function ‘createHeap’:
+heap.c:38:9: error: ‘Heap’ {aka ‘struct Heap’} has no member named ‘ize’; did you mean ‘size’?
+   38 |   heap->ize=0;
+      |         ^~~
+      |         size
+Compilation failed
+d302d3b
