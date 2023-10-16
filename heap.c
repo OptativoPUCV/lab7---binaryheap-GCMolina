@@ -3,6 +3,7 @@
 #include <string.h>
 #include <math.h>
 #include <ctype.h>
+#include <stdbool.h>.h>
 #include "heap.h"
 
 typedef struct nodo{
