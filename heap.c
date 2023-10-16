@@ -3,7 +3,7 @@
 #include <string.h>
 #include <math.h>
 #include <ctype.h>
-#include <stdbool.h>.h>
+#include <stdbool.h>
 #include "heap.h"
 
 typedef struct nodo{
@@ -61,6 +61,11 @@ void heap_pop(Heap* pq){
     if(hijoD< pq->size && pq->heapArray[hijoD].priority > pq->heapArray[padre].priority)padre=hijoD;
 
     if(aux==padre)break;
+
+    heapElem nuevo=pq->heapArray[aux];
+    pq->heapArray[aux]=pq->heapArray[padre];
+    pq->heapArray[padre]=nuevo;
+    aux=padre;
   }
 
 }
