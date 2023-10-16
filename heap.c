@@ -46,45 +46,29 @@ void heap_push(Heap* pq, void* data, int priority){
 
 
 void heap_pop(Heap* pq){
+  if(pq->size==0)return;
+  pq->heapArray[0]=pq->heapArray[pq->size-1];
+  pq->size=pq->size-1;
 
-  //hijos del nodo en posición X: 2X+1 y 2X+2
-  //padre del nodo en posición Y: (Y-1)/2
-
-  //si el montículo esta vacío 
-  if(pq->size ==0) return; 
-
-  //se elimina el mayor elemento 
-  pq->heapArray[0] = pq->heapArray[pq->size-1];
-  pq->size= pq->size-1;
-
-  //organizar nuevamente 
-  int aux = 0;
-  int hijoI, hijoD , padre; 
-  //hijo1 = 2*pq->size+1; 
-  //hijo2 = 2*pq->size +2;
-  //padre = (pq->size-1)/2; 
-
+  int aux=0;
+  int hijoI , hijoD,padre;
   while(true){
-    hijoI = 2 * aux + 1; //aux ?
-    hijoD = 2 * aux + 2;
+    hijoI=2*aux+1;
+    hijoD=2*aux+2;
+    if(hijoI< pq->size && pq->heapArray[hijoI].priority > pq->heapArray[aux].priority)padre=hijoI;
+    else padre=aux;
 
-    //hijo izquierdo es mayor que aux
-    if(hijoI < pq->size && pq->heapArray[hijoI].priority > pq->heapArray[aux].priority) padre = hijoI; 
-    else padre = aux; 
+    if(hijoD< pq->size && pq->heapArray[hijoD].priority > pq->heapArray[padre].priority)padre=hijoD;
 
-    //hijo derecho es mayor que padre
-    if(hijoD < pq->size && pq->heapArray[hijoD].priority > pq->heapArray[padre].priority) padre = hijoD;
+    if(aux==padre)break;
 
-    //aux es el mayor se termina ciclo 
-    if(aux == padre) break;
-
-    heapElem nuevo = pq->heapArray[aux]; 
-    pq->heapArray[aux] = pq->heapArray[padre];
-    pq->heapArray[padre] = nuevo; 
-    aux = padre; 
+    heapElem nuevo=pq->heapArray[aux];
+    pq->heapArray[aux]=pq->heapArray[padre];
+    pq->heapArray[padre]=nuevo;
+    aux=padre;
   }
-}
 
+}
 
 Heap* createHeap(){
   Heap * heap=(Heap*)malloc(sizeof(Heap));
